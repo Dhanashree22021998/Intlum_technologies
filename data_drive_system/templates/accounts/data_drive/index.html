@@ -1,0 +1,12 @@
+<h1>Your Folders</h1>
+<a href="{% url 'create_folder' %}">Create New Folder</a>
+<ul>
+    {% for folder in folders %}
+        <li>
+            {{ folder.name }}
+            <a href="{% url 'update_folder' folder.id %}">Edit</a>
+            <a href="{% url 'delete_folder' folder.id %}">Delete</a>
+            <a href="{% url 'folder_detail' folder.id %}">View Subfolders</a>
+        </li>
+    {% endfor %}
+</ul>
